@@ -1,0 +1,102 @@
+<script>
+    // ELÁGAZÁSOK (CONDITIONALS, BRANCHING)
+    // - eddig csupa szekvenciális programot láttunk
+    //   - szekvenciális: egyik utasítás lefutott a másik után
+    //   - mindig ugyanazok az utasítások futottak le
+    // - jó lenne: valamilyen feltételtől függően fusson le (vagy ne)
+    //   egy vagy több utasítás
+    // - megoldás: elágazások használata
+
+    // - if: kulcsszó; jelzi, hogy feltételesen végrehajtandó
+    //       utasítások következnek
+    // - (): zárójelek (PARENTHESIS, PARENS) között a FELTÉTEL (CONDITION)
+    //       szerepel
+    //       - feltétel: ún. LOGIKAI (BOOLEAN) KIFEJEZÉS
+    //       - logikai kifejezés értéke IGAZ (TRUE) vagy HAMIS (FALSE)
+    //       - ha a feltétel értéke igaz, akkor a feltételes utasítások
+    //         lefutnak
+    // - {}: kapcsos zárójelek (CURLY BRACE) között adjuk meg a feltételesen
+    //       végrehajtandó utasításokat
+    //       - UTASÍTÁS BLOKKnak is nevezzük (BLOCK STATEMENT)
+    if (2 < 3) {
+        alert("ketto kisebb, mint harom");
+    }
+
+
+    if (3 < 2) {
+        alert("ez az ablak sosem jelenik meg");
+    }
+
+    // LOGIKAI TÍPUS
+    // - speciális típus, ami igaz/hamis jellegű "igazságértékeket" ír le
+    // - állítás igaz vagy hamis voltát leíró értékek
+    //   - igaz
+    //   - hamis
+    // - literális alakban is leírhatóak
+
+    // boolean literálok
+    true
+    false
+
+    ////////////////////////////////////////////////////////////
+
+    // TIPP: elágazás ki-be kapcsolása boolean literálokkal 
+    // - ha TESZTELNI akarjuk, hogy mi történik, ha lefut egy elágazás
+    //   vagy épp nem, akkor ki-be kapcsolgathatjuk a feltétel átírásával
+
+    // ezt akarjuk tesztelni...
+    let ertek = prompt();
+    if (ertek < 0) {  // ertek < 0 kirtékelődik és az `ertek` változó alapján  vagy true vagy false
+                      // - () közötti kódrészt EREDMÉNYE true vagy false
+        // lefut, ha ertek < 0 igaz
+    }
+
+    // ertek < 0 helyett beírhatom azt a literális értéket, ami kell
+    if (true) {
+        // mindig lefut, ezzel tesztelem
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    // FORMÁZÁS
+
+    // két elterjedt tördelési stílus
+    if (feltetel) {  // K&R <--- jellemzően ezt használju JS kódban
+        // az utasításblokkok tartalmát nem kötelező, de ERŐSEN
+        // AJÁNLOTT és SZOKÁSOS, hogy behúzzuk egy szinttel,
+        // hogy láttassuk a kód lefutásának beágyazottságát
+    }
+
+    if (feltetel)    // OTBS (one true brace style <-- inkább C#)
+    {
+
+    }
+
+
+    // AJÁNLOTT
+    // ezt nyilvánvalóan könnyebb olvasni, nyilvánvaló, hogy az if-ben
+    // mely utasítások vannak
+    if (feltetel) {
+        alert();
+        prompt();
+        console.log()
+    }
+
+    // KERÜLENDŐ
+    // nehéz lekövetni, hogy melyik utasítás, hova tartozik
+    if (feltetel) {
+    alert();
+    prompt();
+    console.log()
+    }
+    if(feltetel) {
+    alert();
+    prompt();
+    console.log()
+    }
+
+
+
+
+
+</script>

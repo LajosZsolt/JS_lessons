@@ -1,0 +1,58 @@
+<script>
+    // Többfelé ágazás
+
+    // - akárhány feltételt megadhatunk
+    // - az első teljesülő feltételhez tartozó blokk fog lefutni
+    // - a a fetételeknek nem kell, hogy közük legyen egymáshoz
+
+    let feltetel1;
+    let feltetel2;
+    let feltetel3;
+    
+    if(feltetel1) {
+        // valami lefut
+    } else if(feltetel2) {
+        // valami más fut le
+    } else if(feltetel3) {
+        // még valami más fut le
+    } else {
+        // minden más eset
+    }
+
+    // akárhány else if struktúrát írhatunk
+    // else-if sruktúra mindig egy if után jöhet
+
+    // Példa: 
+    let kedvenc = prompt("Kutyás vagy macskás?");
+
+    if(kedvenc == "kutya") {
+        alert("kutya");
+    } else if(kedvenc == "macska") {
+        alert("macska");
+    } else {
+        alert("Nekem mindegy");
+    }
+
+
+    // Példa 2: else-if sorrend fontos
+    // életkor szerint köszöntjük
+
+    let kor = prompt("Hány éves vagy?");
+
+    if(kor <= 14) {
+        alert("Csá kölyök");
+    } else if(kor < 50){
+        alert("Hello");
+    } else {
+        alert("Jó napot");
+    }
+
+    // ha nem jó a sorrend
+    if(kor < 50) {
+        alert("Hello");
+    } else if(kor <= 14){
+        alert("Csá kölyök");
+    } else {
+        alert("Jó napot");
+    }
+</script>

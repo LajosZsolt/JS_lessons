@@ -1,0 +1,75 @@
+<script>
+    // KIFEJEZÉSEK
+    // - olyan kódrészletek, amiknek kiszámítható értéke, eredménye van
+
+    3 + 2  // kifejezés
+    "hello" + "bello"  // kifejezés
+
+    alert(42);  // figyelem: pontosvessző a végén
+                // - ez így egy utasítás!
+
+    // UTASÍTÁS: egy elemi lépés, amit végrehajt a számítógép
+    // - minden program utasítások sorozatából áll
+    // - az utasítások működését kifejezésekkel paraméterezhetjük
+    // - az utasítsokat a pontosvesszővel zárjuk le
+    //   - emlékeztető: sor végéről elhagyható a pontosvessző
+
+    // figyeljük meg: az alert utasításba be van ágyazva a 3 + 2 kifejezés
+    alert(3 + 2);
+
+    // fodítva nem működik: kifejezésbe nem írhatunk uatsítást
+    3 + (3 + 2)       // működik: (3 + 2) is egy kifejezés és ez beágyazható
+    3 + (alert(42);)  // nem működik: mert az utasítást nem írhatjuk a kifejezésbe
+                      // - figyelem: alert(42) pontosvessző nélkül kifejezés lenne, de
+                      //   a pontosvesszővel együtt már egy "lezárt" utasítás
+
+
+    // SZÁMOK ÉS SZÖVEGEK (STRINGEK)
+
+    // az alábbi példáknál tegyük fel, hogy a böngésző konzolba beírjuk és
+    // megvizsgáljuk az eredményt
+
+
+    // KONKATENÁCIÓ (ÖSSZEFŰZÉS)
+    // - string értékek egymás után fűzése
+
+    42    // 42
+    "42"  // "42"
+
+    1 + 1     // 2       <--- összeadás
+    "1" + "1" // "11"    <--- konkatenáció
+
+    // figyeljük meg:
+    // - számokat és szövegeket eltérően tüntetünk fel a kódban
+    // - stringeket idézőjellel "" vagy aposztróffal '', esetleg backtick karakterrel ``
+    //   határoljuk el a kódban -- ezeket a karaktereket elhatároló karaktereknek nevezzük
+    //   - "" és '' között nincs különbség
+    // - összeadás és konkatenáció ugyanazt a + műveleti jelet használja
+    //   - a műveleti jel (operátor) paramétereitől (operandusok) függ, hogy pontosan
+    //     milyen művelet fog történni (összeadás vagy konkatenáció)
+
+    // FIGYELEM: számok és stringek keverésekor nem várt eredményeket kaphatunk
+
+    1 + "1"      // "11"
+    "1" + 1      // "11"
+    1 + 1 + "1"  // "21"
+    "1" + 1 + 1  // "111"
+
+    // FIGYELEM: számokat és stringeket össze lehet adni, de kivonni nem mindig
+
+    1 - "1"      // 0
+    "1" - 1      // 0
+
+    "1" - "1"    // 0
+    "1" + "1"    // "11"  <--- hoppá: összeadáskor string lesz!
+    "aaa" + "a"  // "aaaa"
+    "aaa" - "a"  // NaN   <--- speciális érték, később részletezzük
+                 // - figyeljük meg: NEM "aa" az eredmény
+
+    // KÖVETKEZTEÉS: számok és stringek valahogy alapvetően különböznek
+    // és eltérően viselkednek mindenféle környzetben és eltérően lépnek
+    // kölcsönhatásra egymással
+
+
+      
+</script>

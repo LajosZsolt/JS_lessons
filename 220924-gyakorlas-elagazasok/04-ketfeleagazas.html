@@ -1,0 +1,70 @@
+<script>
+    // Rávezetés
+
+    // Példa: fej vagy írás
+    // két egymást kizáró, ellentétes if
+
+    let tipp = prompt("Fej vagy írás?");
+
+    // egyszerű elágazás
+    if(tipp == "írás") {
+        alert("írás");
+    }
+
+    if(tipp == "fej") {
+        alert("fej");
+    }
+
+    // ezeket az eseteket, amikor két egyértelmű részre tudjunk bontani a program futását
+    // egyszerűbben is le tudjuk írni ELÁGAZÁSOKKAL
+
+
+    // Kétfelé ágzás: IF-ELSE
+    //  - egy else struktúra használatával le tudjuk fedni azokat az eseteket, amikor
+    //    a feltétel nem teljesül
+    //  - az else atruktúra mindig egy feltételes struktúrát kell kövessen,
+    //    nem állhat önmagában
+
+    let feltetel = true;
+    if(feltetel) {
+        // ha igaz a feltétel, akkor lefutnak az utasítások
+    } else {   // nem kell feltétel az else után
+        // minden más esetben az else ág fut le
+    }
+
+    // Hiba
+    // SOHA nem állhat önmagában
+    // else {
+
+    // }
+
+    // BUKTATÓ: else után a {} szintén elhagyható
+
+    // Példa: fej vagy írás
+    
+    let fejVagyIras = prompt("Fej vagy iras?"); // string
+
+    if(fejVagyIras == "iras") {
+        alert("iras");
+    } else {
+        alert("fej");
+    }
+
+
+    // IF VS IF-ELSE
+
+    let a = 42;
+
+    if(a < 55) {
+        alert("kisebb");
+    }
+    alert("nem kisebb");  // HIBA: ez mindeképpen lefut
+
+    //
+
+    if(a < 55) {
+        alert("kisebb");
+    } else {
+        alert("nem kisebb");
+    }
+</script>

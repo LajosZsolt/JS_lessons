@@ -1,0 +1,55 @@
+<script>
+    // EGYSZERŰ FELTÉTELEK ÍRÁSA
+
+    // ÖSSZEHASONLÍTÓ (COMPARISON) OEPRÁTOROK
+    // - logikai értékeket előállító operátorok
+    // - számokkal dolgoznak
+    // - ha nem számot kapnak, akkor számmá alakítják az értéket
+
+    2 <  3  
+    2 <= 2
+    3 >  2
+    2 >= 2
+
+    // buktatók
+    undefined > 3  // false, met Number(undefined) az NaN és NaN bármivel összehasonlítva false
+
+    "43" < 45      // true, mert Number("43") az 43 és az már működik
+
+    // EGYENLŐSÉGVIZSGÁLAT (EQUALITY TEST/CHECK)
+    // - két érték összehasonltása, hogy megegyeznek-e
+
+    let ebed = prompt();
+    if (ebed == "harcsapaprikas") {
+        alert("nyami");
+    }
+
+    // PÉLDA: 07-hiba-ertekadas-egyenloseg
+
+    // SZIGORÚ (STRICT) ÉS MEGENGEDŐ (LOOSE) EGYENLŐSÉG
+    // - kétféle egyenlőségvizsgálat van
+    // - a szigorú a TÍPUST IS figyelembe veszi
+    // - a megengedő megpróbálja közös típusra hozni az értékeket
+
+    2 == "2"   // true      Number(2) -> 2
+
+    2 === "2"  // false    typeof 2   és typeof "2"    nem ugyanaz
+
+
+    // FIGYELJÜK MEG: === a == helyett
+    // - === jelzi, hogy TÍPUSOSAN akarunk összehasonlítani
+    // - csak akkor lesz true, ha a két érték típusra pontosan megegyezik
+    // a == a megengedő egyenlőség megpróbálja a két értéket közös típusra hozni
+    // - pontos eljárás: https://tc39.es/ecma262/#sec-islooselyequal
+
+
+
+    
+    // PÉLDA: 08-hiba-ertekadas-egyenlosegvizsgalat
+
+
+
+
+
+
+</script>

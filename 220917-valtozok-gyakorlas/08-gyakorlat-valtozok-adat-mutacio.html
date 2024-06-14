@@ -1,0 +1,32 @@
+<script>
+    
+    // 1. Mikor mi lesz a változó értéke?
+    
+       let a = 42;  // <--- deklaráció + inicializáció egy lépésben
+    
+       a // 42
+    
+       a = a + 1;   // figyeljük meg: visszaírjuk a változóba a kiszámolt értéket
+                    // - kiszámolt érték: a + 1 kifejezés értéke (42 + 1)
+                    // - visszaírjuk: történik egy értékadás, a = a + 1
+    
+       a // 43
+    
+       a + 1;  // FIGYELEM: NEM történt értékadás
+               // - kiszámoltuk, hogy mennyi a + 1, de a kiszámolt értéket
+               //   nem írtuk vissza az a változóba
+               // - a számolás eredménye "elillan"
+    
+       a // NEM 44, hanem 43  a fentiek alapján
+    
+       a = a + "1"
+    
+       a // "431"       43 + "1" -> "431"
+    
+       a = a + 1
+    
+       a // "4311"
+
+       // 
+
+</script>

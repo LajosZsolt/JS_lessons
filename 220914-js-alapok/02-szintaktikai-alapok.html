@@ -1,0 +1,99 @@
+<script>
+    alert("hello");        // megjelenik, hogy "hello" egy ablakban
+    alert(42);             // megjelenik, hogy 42 egy ablakban
+    console.log("hello world");  // megjelenik, hogy "hello" a konzolon
+    console.log("55");       // megjelenik, hogy 42 a konzolon
+
+    // MEGFIGYELÉSEK
+    // - betűk/karakterek "" idézőjelek (quotation marks) között vannak
+    // - alert és console.log valamképpen meghatározza, hogy hova írunk ki/mi történjen
+    // - kisbetűvel írtunk mindent
+    // - ha megkezdünk egy zárójelet, azt be is zárjuk
+    // - console és log között van egy .
+    // - minden, ami a zárójelben van, az határozza meg, hogy mi fog megjelenni
+    // - pontosvessző minden sor végén
+    // - alert sárgával van írva, a console kékkel (a log megint sárga)
+    // - szövegek és számszerű dolgok eltérő színűek
+    // - amilyen sorrendben írtuk a sorokat, abban a sorrendben történnek a dolgok
+    // - a zárójel tartalmazza, hogy "mit" írjunk ki
+    // - a log a consolnak lehet valamije, ezért lehetnek eltérően feltűntetve
+    // - script-hez képest minden más be van húzva
+
+    // TOVÁBBI KÍSÉRLETEZÉSI LEHETŐSÉGEK
+    // - feltűnően nincsenek szóközök
+    // - alert írható-e alert () közé?
+
+    ///////////////////////////////////////////////////////////////
+
+    // alert és console.log határozza meg, hogy mi történjen
+    // - az alert és a console.log egyfajta utasításként értelmezhetőek
+    alert("valami");
+    console.log("valami");
+
+    // console.log
+    // - a . a console és a log között azt jelzi, hogy a console-lal
+    //   akarunk csinálni valamit
+    
+    // valójában mindig a böngészőablakból indulunk ki, és az alert is
+    // azon belül értelmezendő
+    // - minden, amit a window előtaggal írnánk, onnan elhagyható a window előtag
+    // - . jelentése: valaminek a valamije
+    window.alert("valami");
+    window.console.log("valami");
+
+    // () az utasítások megnevezése után az utasítások paramétereit jelzi
+    // - pl. alert azt jelenti, jelenítsünk meg egy értesítőablakot
+    // - () közé írjuk, hogy mi jelenjen meg az értesítőablakban
+    // - FONTOS: a () nélkül az utasítás NEM FUT LE
+    // - az utasítás neve és a () között tetszőleges szóközkaraktert írhatunk
+
+    alert;          // megnevezi az alert utasítást, de NEM HAJTJA VÉGRE
+    alert();        // megnevezi és végrehajtja az utasítást -- de nem jelenik meg az ablakban semmi
+    alert("asdf");  // megjelenik az ablak, benne a szöveggel
+
+    // a ()-el végrehajtott utasításokat FÜGGVÉNYEKNEK (FUNCTION) nevezzük
+    // - a függvények neve után írt () a PARAMÉTER LISTA (PARAMETER LIST)
+    //   - másik nevén: ARGUMENTUM LISTA (ARGUMENT LIST)
+
+    // pontosvessző
+    // - az utasításokat (instruction) ; (semicolon) karakterrel kell elválasztani
+    // - ha egy utasítás pontosan egy sor, akkor a ; elhagyható
+    //   - a böngésző minden sor végére odaképzeli a ; karaktert
+    //   - automatikusan pontosvessző beszúrás (automatic semicolon insertion)
+
+    // SZÖVEGEK
+    // - a szövegeket "" (quotation mark) karakterek között írjuk
+    // - "" helyett használhatunk aposztófot '' (apostrophe) vagy úgyn. "backtick" karaktert ` (Mac: option + ű, Win: AltGr + 7)
+    // - a szöveges értékeket STRINGNEK nevezzük
+    //   - STRING: lánc, eredeti nevén karakterlánc (character string)
+    // - a "", a '', és a `` a string ELHATÁROLÓ KARAKTEREINEK (DELIMITER) nevezzük
+
+    "ez egy szöveg"
+    'ez is egy szöveg'
+    `és ez is egy szöveg`
+
+    // - a "" és az '' között nincs különbség
+    //   - akkor hasznosak, ha idézőjelbe akarunk aposztrófot tartlmazó szöveget írni vagy fordítva
+
+    "He's a whatever"
+    'She said: "whoah"'
+
+    // ha nem tudjuk megkerülni, hogy ugyanazt a karakter használjuk a szövegben,
+    // mint ami az elhatároló, akkor úgynevezett ESCAPELÉST csinálunk
+    // - jelezzük, hogy a karaktet szó szerint kell értelmezni
+    // - stringen belül a \ (BACKSLASH karakter)
+    'She said: it\'s a mistake"'
+
+    // - a backtick az egy speciális string, később tanuljuk
+
+    // SZÁMOK
+    // - a számszerű értékeket egyszerűen beírjuk
+    // - szóközökkel nem tagolhatjuk őket
+    // - tizedes pont van tizedes vessző helyett
+
+    42  // ez egy egész szám
+    4.2 // ez egy törtszám
+    420 // ez is egy szám :)
+
+
+</script>

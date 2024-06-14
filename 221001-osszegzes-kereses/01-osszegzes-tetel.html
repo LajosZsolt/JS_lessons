@@ -1,0 +1,33 @@
+<script>
+    // Összegzés
+
+    // Példa 1
+    let t = [1, 2, 3, 4, 5];
+    let sum = 0;  // itt tároljuk el az éppen aktuális összeget
+    let i = 0;   // ciklus változó
+
+    while(i < t.length){
+        sum = sum + t[i];
+        i = i + 1; // lépteteés, ciklus változót mindig eggyel növeljük
+    }
+
+    console.log(sum);
+
+    // Példa 2
+
+    let t2 = [1, 5, 9, 3, 8, 10];
+    let sum2 = 0; // itt tároljuk el az éppen aktuális összeget
+    let j = 0;    // ciklus változó
+
+    while(j < t2.length){
+        if(t2[j] < 7){
+            sum2 = sum2 + t2[j];
+        }
+        // az if-en kívül kell léptetni, különben végtelen ciklusra fog futni mivel a ciklus 
+        // változó értéke nem megy tovább, ha a nem lép be a if feltételbe
+        j = j + 1;
+    }
+
+    console.log(sum2);
+
+</script>

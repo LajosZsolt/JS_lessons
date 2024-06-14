@@ -1,0 +1,19 @@
+<script>
+    // SZÁM KITATÁLÓS JÁTÉK
+    // - megadunk egy számot
+    // - addig tippelget a másik játékos, amíg nem találja el
+
+    let megfejtes = prompt("adj megy szamot (1-tol 10-ig)");
+
+    let vege = false;
+    while(!vege) {
+        let tipp = prompt("mire tippelsz?");
+
+        if (tipp == megfejtes) {
+            vege = true;
+            alert("talalt!");
+        }
+    }
+
+
+</script>

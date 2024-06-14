@@ -1,0 +1,52 @@
+<script>
+    // KIFEJEZÉSEK (EXPRESSION)
+    // - kifejezések olyan kódrészletek, amiknek kiszámítható értéke van
+
+    // ez egy KIfEJEZÉS
+    3 + 2  // a kiszámítható értéke 5
+
+    // ez egy UTASÍTÁS
+    // - figyeljük meg: az utasításba beleírtunk egy kifejezést
+    alert(3 + 2);  // nincs kiszámítható érték
+                   // - technikailag nem igaz, később részletezzük (lásd: undefined)
+
+    // MATEMATIKAI KIFEJEZÉSEK
+    // - középisolából ismerős lehet
+    
+    3 + 2 * 5 - 4
+
+    // a műveleteknek van egy sorrendje
+    // - szorzás erősebb az összeadásnál
+
+    // zárójelezéssel szabályozahtjuk a műveeti sorrendet
+    (3 + 2) * (5 - 4)
+
+    // programozásban nem csak matematikai kifejezések léteznek
+    // - pl. tudunk stringeket "összeadni"
+
+    "hello" + "bello"  // "hellobello"
+
+    "hello" - "hell"   // intuíció: "o", mivel "kivonjuk" a szöveget
+                       // - valóság: hiba, összeadni tudunk szövegeket, de kivonni nem
+                       // - indok: így van megírva a nyelv
+
+    // LÁTHATJUK: hogy a programozásban a kifejezések kicsit bonyolultabb jószágok,
+    // mint a matematikában, ezért van néhány egyéb fogalom is
+
+    // OPERÁTOR: a műveleteket, műveleti jeleket operátornak (operator) nevezzük
+    // - a + az egy operátor
+    // - attól függően jelent számszerű összeadást vagy szövegek összefűzését, hogy
+    //   milyen értékek, kifejezések szerepelnek a két oldalán
+
+    3 + 2  // számszerű összeadás, mert mindkét oldalon számszerű érték van
+
+    "3" + "2"  // szöveges összefűzés (KONKATENÁCIÓ, CONCATENATION), mivel szöveges értékek állnak a két oldalán
+
+    3 + "2"    // FIGYELEM: "32"
+               // - amikor az + valamelyik oldalán string szerepel, akkor autoatikusan stringgé alakul a másik is
+
+    "3" + 2   // "32"
+
+
+
+</script>

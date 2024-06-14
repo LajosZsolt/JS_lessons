@@ -1,0 +1,326 @@
+<script>
+    // VÁLTOZÓK (VARIABLES)
+    // - értékek tárolását szolgáló nyelvi elem
+    // - névvel ellátott memóriahivatkozás
+    //   - eltárolunk egy értéket a memóriában
+    //  - adunk egy nevet a memóriaterületnek
+    //  - a megadott névvel hivatkozhatunk a memóriaterületen tárolt értékre
+
+    42   // ez egy literál
+         // - amikor a böngésző felolvassa, akkor úgymond "rágondol" erre a számra
+         // - majd a "gondolat elillan"
+
+    // ez egy változót létrehozó utasítás
+    // - a változó neve `eletkor`
+    // - a változóban tárolt érték 42
+    let eletkor = 42;
+
+    alert(eletkor);  // kiírja, hogy 42
+                     // - az `eletkor` változóra törtnő hivatkozáskor a benne tárolt érték
+                     //   automatikusan behelyettesítésre kerül!
+
+
+    // miért van szükség változókra?
+    // - a processzor kiszámítja egy kifejezés értékét, pl. 3 + 2
+    // - ha nem tároljuk el, az eredmény elvész
+    // - hasonlat: szóban kiszámolt eredmény vs leírt eredmény
+    // - a változó neve jelentést közöl
+    // - változók használatával a kód érthetőbbé válik
+
+    let zenekar = 3 + 2;   // nem csak konkrét értéket, hanem
+                           // tetszőleges kifejezés eredményét eltárolhatjuk
+                           // változóban
+
+    alert(zenekar);        // 5
+
+    // VÁLTOZÓ NEVE 
+    // - bizonyos megkötések figyelembe vételével bármi lehet
+    // - nem kezdődhet számjeggyel
+    // - nem tartalmazhat olyan karaktereket, aminek speciális jelentése van
+    //   - pl. + - / *
+    // - kis és nagybetűre ÉRZÉKENY
+    //   - abba és ABBA két külön változót jelöl
+    
+    // VÁLTOZÓK ÉS KIFEJEZÉSEK
+    // - változók önmagukban is kifejezések
+    // - a változónak, mint kifejezésnek a kiszámolható értéke a változóban tárolt érték
+    // - ha a változók kifejezések, és a kifejezések egymásba ágyazhatóak, akkor
+    //   ez azt jeenti, hogy változókat szabadosan írhatunk kifejezésekbe
+    // - bárhova, ahova értéket, kifejezést írhatunk, oda írhatunk változót (és fordítva)
+
+    // példa: ekvivalensek az eredmény tekintetében
+    
+    // változó nélkül
+    alert(42);
+    
+    // változóval
+    let a = 42;
+    alert(a);
+
+
+    // változó nélkül
+    3 + 2        // 5
+
+
+    // változóval
+    let b = 2;
+    3 + b        // 5
+
+
+
+    // példa: változk és kifejezések
+
+    let foo = 42;
+    let bar = 55;
+    let baz = foo + bar;
+
+    alert(baz);    // kiírja, hogy 97
+
+
+    // TIPP: hibakereséskor, kísérletezéskor játszahtunk azzal, hogy
+    // tetszőlgees változók értékét "fixáljuk": beírunk egy konkrét értéket
+    // és azzal megnézzük a kód lefutását
+
+    // tegyk fel, hogy `egyik` és `masik` két változó valahonnan
+    let eredmeny = egyik - masik;
+    alert(eredmeny)    // tegyük fel, hogy NaN van kiírva
+
+    // elkezdhetünk kísérletezni, hogy vajon mi lehet az ok
+    // - hipotézis: valamelyik változó értéke nem számot leíró string
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // változók nélkül a világ
+    alert((40 - 32) * 5/9);
+    
+    
+    
+    
+    // változókkal a világ
+    let fahrenheit = 40;
+    let celsius = (fahrenheit - 32) * 5/9;
+    alert(celsius);
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    // FOGALMAK, SZINTAXIS
+
+    // DEKLARÁCIÓ (DECLARATION)
+    // - változónak a létrehozása, BEVEZETÉSE (INTRODUCE)
+    // - `let` KULCSSZÓ (KEYWORD) használatával jelezzük, hogy változót akarunk létrehozni
+    //   - ezt követi a változó neve, AZONOSÍTÓJA (IDENTIFIER)
+    //   - let angolul azt jelenti, hogy "legyen"
+    //   - "legyen egy valami nevű változó, aminek az értéke 42"
+
+    let valami = 42;  // deklaráció
+
+    // FIGYELEM: változó ÚJRADEKLARÁLÁSA (REDECLARATION) tiltott
+
+    // let valami = 55;   // HIBA: nem lehet ugyanazzal a névvel létrehozni új változót
+                       // - megj: legalábbis ugyanazon láthatósági körön belül (később részletezzük)
+    
+
+
+    // ÉRTÉKADÁS (ASSIGNMENT)
+    // - amikor értéket tároluk egy változóban
+    // - létező változónak is adhatunk új értéket: FELÜLÍRÁS (UPDATE)
+    
+    // 1) létrehoztuk a foobar nevű változót a 42 kezdőérékkel
+    let foobar = 42;
+
+    // 2) kiírtuk a foobar jelenlegi értékkét
+    alert(foobar);    // 42
+
+    // 3) FELÜLÍRTUK a foobar változóban tárolt értéket
+    // FIGYELJÜK MEG: nincs `let`
+    // - NEM deklaráció, hanem csak sima értékadás
+    // - mivel létezik a változó, ezért felülírás
+    // - FIGYELEM: VISSZAMENŐLEG NEM VÁLTOZIK MEG AZ ÉRTÉK
+    //   - csak az ezután futó kódrészleteknél lesz 55 a foobar értéke
+    foobar = 55;
+
+    // 4) kiírtuk a jelenlegi (legutóbb eltárolt) értéket
+    alert(foobar);    // 55
+
+
+
+
+
+
+    // VÁLTOZÓK ÉS UTASÍTÁSOK SORRENDJE
+    // - vigyázat: a változók kezelése szigorúan aszerint a sorrend szerint halad,
+    //   ahogyan a kód lefut
+    
+    // HIBÁS: előbb hivatkozunk az x és y változókra, mint hogy létrehozzuk őket
+    // - elméletben gondolhatnánk, hogy "megmondtuk", hogy legyen z egyenlő x és y összgével
+    //   majd megmondtuk, hogy mi legyen x és y
+    // - de ez csak a mi emberi fejünkkel értelmezhető, a szgép sajnos ennél egyszerűbb
+    // - a szgép nem tudja, mi az az x és y, amikor hivatkozunk rá
+    let z = x + y;
+    let x = 3;
+    let y = 2;
+    
+    // HELYES
+    // let z = x + y;
+    // let x = 3;
+    // let y = 2;
+
+    
+
+
+    // INICIALIZÁCIÓ (INITIALIZATION)
+    // - változó ELSŐ ÉRTÉKADÁSA
+    // - nem kötelező létrehozáskor inicializálni egy változót
+    // - tipikusan valamilyen hiba vagy számítás eredménye,
+    //   ritkán használjuk közvetlenül
+
+    let asdf;  // inicializálatlan (uninitialized) változó
+
+    // ezekben a sorokban a változónak speciális értéke van
+
+    alert(asdf);   // UNDEFINED
+                   // - speciális érték, ami az ismeretlen, nem meghatározott értékeket jelöli
+                   // - se nem szám, se nem string... undefined az egy külön típus
+
+
+    asdf = 42; // mostmár inicializált!
+
+    // FIGYELEM: mivel az undefined az egy TÍPUS aminek van ÉRTÉKE
+    // (maga az undefined, mint egyedüli érték), EZÉRT van neki
+    // LITERÁLIS ALAKJA
+
+    undefined  // undefined literális alakja
+
+    // ha van literális alak, akkor értékül adhatjuk változónak
+
+    let qwer = undefined;  // FIGYELEM: ez egy INICIALIZÁLT változó
+                           // - csakhogy az értékének KIFEJEZETTEN beállítottuk az undefined értéket
+                           // - jellemzően nem kézzel írjuk be az undefined értéket, hanem
+                           //   egy másik változó értékével dolgozunk és onnan kapunk (váratlanul) undefined értéket
+
+
+    // MŰVELETEK UNDEFINED-DAL
+    // - árulkodó jelek, hogy undefined érték került a kódba
+
+    // undefined + szám
+    undefined + 42         // NaN
+                           // - Not a Number, speciális SZÁM, ami azt jelzi, hogy egy matematikai művelet
+                           //   eredménye NEM SZÁM
+                           // - kissé zavarbaejtő módon egy SZÁM TÍPUSÚ értékkel jelezzük, hogy az eredmény
+                           //   NEM SZÁM
+                           // - később visszatérünk rá
+
+    // undefined + string
+    undefined + "foo"      // "undefinedfoo"
+
+    undefined + NaN        // NaN
+                           // - amikor egy matematikai számításba NaN keveredik az  mindig NaN lesz
+
+    "foo" + undefined + NaN // "fooundefinedNaN"
+
+    undefined + NaN + "foo"  // "NaNfoo"
+
+    // NaN vs undefined
+    // - undefiend nem elég jó a hibák jelzésére
+    // - nem egyérelmű, hogy HIÁNYZIK egy érték vagy HIBÁS
+
+    0/0  // lehetne undefined, de NaN
+
+    let ertek = 0/0;  // ha undefined lenne, nem tudnánk megkülönböztetni, hogy értelmezhetetlen művelet
+                      // vagy hiányzó érték
+
+    // NaN ÉS HIBAKERESÉS
+    // h egy eredmény NaN, akkor biztosan tudjuk, hogy hiba van a számításban valahol
+    // - a NaN értékből visszakövetkeztethetünk oda, ahol a hiba keletkezett
+
+
+    alert(v3);   // tegyük fel, hogy ez NaN
+                 // - meg kell nézni, hogy v3 hol kap értéket
+
+
+    //tegyük fel, hogy korábban a kódban
+    v3 = v2 + v1;  // tudjuk, hogy v2 vagy v1 vagy undefined vagy NaN valamelyik
+                   // - console.log-al kiírjuk v2 és v1 értékét
+                   // - ez alapján tudjuk, hogy melyik helytelen és megyünk vissza a kódban 
+    
+    
+    
+    //tegyük fel, hogy korábban a kódban
+    v2 = v1 * 5;   // látjuk, hogy v2 értéke v1-től függ
+    
+    //tegyük fel, hogy korábban a kódban
+    // - kiíratjuk mindkét értéket
+    // - pl. kiderül. hog b értéke undefined volt
+    v1 = a + b;    
+
+
+    // VÁLTOZÓK ÉRTÉKÉNEK MÁSOLÁSA
+
+    let egyik = 42;    // egyik: 42
+    let masik = 55;    // egyik: 42     masik: 55
+
+    egyik = masik;     // egyik: 55     masik: 55
+    // GYAKORI FÉLREÉRTÉS
+    // - egyik = masik miatt mostantól MINDIG ugyanaz az érték lesz
+    // - DE: ez nem igaz... mert ez nem egy ÖSSZEKÖTÉS, csak egy ebben a PILLANATBAN
+    //    AKTUÁLIS ÉRÉTKRŐL történt MÁSOLÁS
+
+    masik = masik + 1; // egyik: 55     masik: 56
+
+    // FIGYELJÜK MEG
+    // - a változó értékének átmásolása után a két változóban tárolt érték
+    //   egymástól teljesen különálló életet él
+    // - az értéket abban a pillanatban lemásoljuk, amikor az értékadás történik
+
+    egyik = 70;       // egyik: 70      masik: 56
+
+
+
+
+
+    // alternatív példa
+    let egyik2 = 42;    // egyik2: 42
+    let masik2 = 55;    // egyik2: 42     masik2: 55
+
+    masik2 = egyik2;    // egyik2: 42     masik2: 42
+    
+
+    // GYAKORI HIBÁK
+
+    // GYAKORI HIBA 1: előbb hivatkozunk a változóra, mint hogy létehoztuk
+
+    alert(nemletezo);  // Uncaught ReferenceError: nemletezo is not defined
+                       // - referenceerror: változó hivatkozással kapcsolatos hiba
+                       // - is not defined: a mondott változó nincs definiálva, bevezetve
+                       //   - nincs ilyen nevű változó
+    
+    // GYAKORI HIBA 2: nemlétező változónak adunk értéket
+
+    nemletezo = 42;  // VIGYÁZAT: alapvetően MŰKÖDIK
+                     // - automatikusa létrejön egy ún. GLOBÁLIS VÁLTOZÓ
+                     //    - később részletezzük
+                     // - az így létrehozott változó úgy működik, mintha
+                     //   let helyett var kulcsszóval hoztuk volna létre
+                     //   - hamarosan részletezzük, hogy ezzel mi a baj
+                     // - a var kulcsszóval létrehozott változókkal több
+                     //   csapda, buktató van, ezért kerülendőek
+
+    // FIGYELEM: mi a különbség a HIBA és HIBA 2 között?
+    // - HIBA 1 esetén OLVASNI próblunk egy nemlétező változót
+    // - HIBA 2 esetén ÍRNI próblunk egy nemlétező változót
+    //   - a háttérben automatikusan létrejön
+    //   - ezután már tudunk hivatkozni olvsaás céljából
+
+    // GYAKORI HIBA 3: előbb akarunk hsználni egy változót, mint hogy inicilizáltuk
+    // volna
+
+    alert(w);  // Uncaught ReferenceError: Cannot access 'w' before initialization
+               // - a változó LÉTEZIK, de NINCS INICIALIZÁLVA
+    let w;     // - figyelem: a hiba akkor is jön,h a w = 42 inicializáció lenne,
+               //   met továbbra is előbb használjuk!
+
+                     
+    
+
+</script>

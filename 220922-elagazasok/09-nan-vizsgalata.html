@@ -1,0 +1,24 @@
+<script>
+    // NAN VIZSGÁLATA
+    // - NaN az egy speciális érték
+    // - annyira speciális, hogy NEM EGYENLŐ SAJÁT MAGÁVAL
+
+    NaN == NaN  // false
+    NaN === NaN // false
+
+    // PROBLÉMA: hogyan vizsgálhatom meg, hogy egy érték NaN-e?
+    // MEGOLDÁS: Number.isNaN()
+
+    if(Number.isNaN(x)) {
+        // lefut, ha x értéke NaN
+    }
+
+    if(x == NaN) {
+        // akkor sem fut le, ha x értéke NaN, met NaN == NaN mindig false
+    }
+
+    // MEGJEGYZÉS: van sima isNaN() is
+    // - nem részletezzük
+    // - régebbi verzió
+    // - használjuk a Number.isNaN()-t
+</script>

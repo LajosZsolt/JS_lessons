@@ -1,0 +1,36 @@
+<script>
+    // Írj egy kifejezést a megadott változók használatával, ami a várt értéket produkálja!
+
+/*
+let a = 42;
+
+a + 1  // 43
+a + 42 // 84 
+a * 2  // 84 
+a + a  // 84 
+*/
+
+/*
+let b = "hello";
+
+b + " world" // "hello world"
+b + " " + b // "hello hello"
+*/
+
+
+
+
+let a = 42;
+let b = "hello";
+
+b + " " + a // "hello 42"
+b + " " + a + " " + b + " " + a       // "hello 42 hello 42"
+b + " " + a + " " + b + " " + (a + 1) // "hello 42 hello 43"
+
+// hogyan lehetne egyszerűsíteni a kódot erre az esetre?
+//      "hello 42 hello 42"
+
+let c = b + " " + a;  // eltároljuk az ismétlődő részstringet egy változóba
+c + " " + c;  // voila: "hello 42 hello 42"
+
+</script>

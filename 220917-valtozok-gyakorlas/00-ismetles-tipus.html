@@ -1,0 +1,28 @@
+<script>
+    // TÍPUS
+
+    3 + 3      // 6
+    "3" + "3"  // "33"
+
+    // látjuk: + eltérően viselkedik, ha számokról vagy szövegekről van szó
+    // - szövegek esetén KONKATENÁCIÓ történik
+    // - száok esetén a szokásos összeadás
+
+    // trükkös eset: szöveg és szám
+
+    3 + "3"   // "33"
+    "3" + 3   // "33"
+
+    3 - 3      // 0
+    "33" - "3" // 30    <--- NEM "3"
+               //            - figyeljük meg: stringekkel dolgozunk, de az eredmény szám
+               //            - nem működik a fordított logika a- operátornál
+               //            - a - megintcsak eltérően működik, mint az +
+
+    // konklúzió
+    // - a kifejezések kiértékelésekor számít az operandusok típusa és az operátor
+    // - összetett kifejezésekben a végeredmény eltérhet attól függően, hogy
+    //   a kiértékelés során miként alakul az "aktuális részeredmény" típusa
+
+    1 + 1 + 1
+</script>

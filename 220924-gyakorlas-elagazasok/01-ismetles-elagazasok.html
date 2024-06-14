@@ -1,0 +1,66 @@
+<script>
+    // Elágazások, feltételes utasítások
+
+    // - feltételhez kötött utasítások
+    // - akkor fut le a kód, ha a megadott feltéetel teljesül
+
+    // Példa: Tudunk-e kávét főzni
+    let vizestartaly = 25;
+    let kaveKapszula = 10;
+    let kavefozes = vizestartaly - kaveKapszula;
+
+    if(kavefozes > vizestartaly) {
+        alert("Nincs elegendő víz a gépben!");
+    }
+
+    //////
+
+    if(vizestartaly <= 0) {
+        alert("Nincs elég víz");
+    }
+
+    if(kaveKapszula <= 0) {
+        alert("Nincs kávékapszula");
+    }
+
+    // Példa:
+    if(1 < 3) {
+        alert("A feltétel igaz");
+    }
+
+    // szintaxis:
+    // - IF kulcsszó jelzi, hogy a feltételes utasítás kezdődik
+    // - az if után a FELTÉTEL következik () között
+    // - a feltétel után egy utasítás vagy utasításblokk következik
+
+    // Példa: utasítás vs utasításblokk
+
+    // 1. minkét alert lefut
+    if(1 < 3) 
+        alert("foo");
+        alert("bar");
+
+    // 2. minkét alert lefut
+    if(1 < 3) {
+        alert("foo");
+        alert("bar");
+    }
+
+    // 3. 
+    if(1 > 3)  
+        alert("foo");
+        alert("bar"); // ez az alert fog lefutni
+
+    // 4. egyik alert sem fog lefutni
+    if(1 > 3) {
+        alert("foo");
+        alert("bar");
+    }
+
+
+    // Tanulság: az if-hez mindig egy utasítás vagy utasításblokk tartozik,
+    //           ha több utasítást akarunk megadni feltételtől függően akkor
+    //           utasításblokkot használunk
+
+    // Tipp: mindig utasításblokkot használjunk
+</script>

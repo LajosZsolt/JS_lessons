@@ -1,0 +1,30 @@
+<script>
+    // Szigorú és megengedő egyenlőség vizsgálat
+
+    // kétféle egyenlőség vizsgálat
+    //  - szigorú: ===, típusnak egyeznie kell
+    //  - megendgedő: ==, eltérhat a típus
+
+    // megengedő
+    4 == "4"   // true
+    4 == 6     // false
+
+    // szigorú
+    4 === "4"   // false
+    4 === 4     // true
+
+
+    // Példa: megengedő egyenlőség vizsgálat haszna
+
+    let tipp = prompt("Találd ki melyik számra gondoltam 1 - 10 között?"); // typeof tipp => "string"
+    let gondoltSzam = 6; // typeof gondoltSzam => "number"
+
+    if(tipp == gondoltSzam) { // megengedő
+        alert("Eltaláltad"); // ez le fog futni, ha eltalálta a számot a felhasználó
+    }
+
+    if(tipp === gondoltSzam) { // szigorú
+        alert("Eltaláltad");   // ez nem futna le és valahol számmá kellene alakítani a tipp változót
+    }
+
+ </script>

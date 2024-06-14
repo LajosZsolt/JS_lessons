@@ -1,0 +1,45 @@
+<script>
+    // CIKLUSOK HASZNÁLATA
+    // - ciklusokkal számsorozatok generálhatóak
+
+    let i = 0;
+    while (i < 3) {
+        i = i + 1;
+    }
+
+    // i változó az alábbi értékeket veszi fel: 0 1 2 3
+
+    // kérdés: mire jó ez nekünk?
+
+    let t = [42, 55, 70];  
+
+    // pl. kiírhatjuk a tömb értékeit
+
+    t[0]  // 42
+    t[1]  // 55
+    t[2]  // 70
+
+    // vegyük észre: a felhasznált indexek szinté egy növekvő számsorozat
+
+    let j = 0;
+
+    console.log(t[j]);
+    j = j + 1;
+
+    console.log(t[j]);
+    j = j + 1;
+
+    console.log(t[j]);
+    j = j + 1;
+
+    // ciklussal megfogalmazva
+
+    let k = 0;
+    while (k < 3) {  // probléma: csak 3 hosszú tömbökre jó
+                     // - megoldás: t.length a 3 helyett
+        console.log(t[k]);  // a cikluson belül a ciklusváltozó
+                            // segítségével "bejárjuk", "iteráljuk"
+                            // a tömböt ("iterálunk a tömb felett")
+        k = k + 1;
+    }
+</script>

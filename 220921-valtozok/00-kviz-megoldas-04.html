@@ -1,0 +1,49 @@
+<script>
+
+// 1. Melyek a helyes kódrészletek, ha szám típusú értéket akarunk beolvasni?
+
+// A  HELYES
+let a = Number(prompt());
+
+// levezetés
+
+    Number(prompt())
+
+        prompt()      // tfh, felhasználó beírta: 42
+
+    Number("42")
+
+        42
+
+// végeredmény: let a = 42
+
+// B  HELYES
+let b = prompt();
+b = Number(b);
+
+// levezetés
+
+    prompt()   // tfh, felhasználó beírja: 42
+
+    // let b = "42";
+
+    b = Number(b)
+
+       Number("42")   // 42
+
+    // végeredmény:
+    b = 42
+
+// C
+// - mindegy mit írunk ki (pl. adj meg egy számot)
+// - ettől a prompt a stringet produkál
+let c = prompt("adj meg egy szamot!");
+
+// D
+// - a prompt() paraméterének adjuk meg a Number()-t
+// - nem a prompt() eredményét alakíjuk számmá
+// - a semmit számmá alakítjuk és ezt adjuk mega  promptnak, hogy jelenítse meg
+let d = prompt(Number());
+
+
+</script>

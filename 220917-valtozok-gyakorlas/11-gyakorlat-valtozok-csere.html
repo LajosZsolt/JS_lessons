@@ -1,0 +1,32 @@
+<script>
+    // adott két változó, a és b
+    // cseréljük meg a két változó értékét úgy, hogy a program végén
+    // b értéka az a eredeti értéke és fordítva
+    // - NEM írhatjuk be KÖZVETLENÜL az értékeket a változókba
+    // - tegyük fel azt, hogy nem tudjuk, hogy mi a pontos érték
+
+    // tegyük fel, hogy nem tudjuk, hogy a és b értéke micsoda
+    let a = 42;
+    let b = 55;
+
+    /*
+    // NEM JÓ KÓD
+    a = b;  // probléma: elvesztettem a eredeti értékét    a: 55   b: 55
+            // - megoldás: értékadás előtt egy segédváltozóba eltárolom az értéket
+    */
+            
+    // JÓ KÓD
+    let c = a;      // a: 42   b: 55    c: 42    eltárolom, kimásolom az a értékét
+    a = b;          // a: 55   b: 55    c: 42    nem gond, hogy felülírom a-t, mert az értékét eltároltam 
+                    // - megmaradt a c változóban az a eredeti értéke
+
+    b = c;          // a: 55   c: 42    c: 42
+                    // - most c változóban van az az eredeti a-beli érték,
+                    //   ami kell nekem
+    
+
+
+    // itt az a és b értéke meg kell, hogy cserélve legyen
+    a // 55
+    b // 42
+</script>

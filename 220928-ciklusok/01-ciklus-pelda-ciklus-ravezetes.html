@@ -1,0 +1,48 @@
+<script>
+    /*
+    - először ciklus nélkül, aztán ciklussal
+        - tábla csoki elfogyasztása
+        - kockánként írjuk ki, hogy hány kocka van hátra
+        - debugger
+    */
+
+    // ciklus nélkül
+
+    let kockak = 3;
+
+    console.log("megettünk egy kockát");
+    kockak = kockak - 1;
+    console.log("megmaradt kockák száma: " + kockak);
+
+
+    console.log("megettünk egy kockát");
+    kockak = kockak - 1;
+    console.log("megmaradt kockák száma: " + kockak);
+
+
+    console.log("megettünk egy kockát");
+    kockak = kockak - 1;
+    console.log("megmaradt kockák száma: " + kockak);
+
+
+    console.log("megettünk egy kockát");
+    kockak = kockak - 1;
+    console.log("megmaradt kockák száma: " + kockak);
+
+    // problémák
+    // - lemehetünk mínuszba
+    // - fájó a kóddal való munka: átláthatatlan, nehéz értelmezni a sok ismételődés miatt
+
+    // ciklussal
+    // - az ismétlődő utasítások pontosan egyszer szerepelnek
+    // - bevezettünk egy úk nyelvi elemet: while
+    // - a while egy ún. ciklus (loop)
+    kockak = 3;
+    while (kockak > 0) {
+        console.log("megettünk egy kockát");
+        kockak = kockak - 1;
+        console.log("megmaradt kockák száma: " + kockak);
+    }
+
+
+</script>

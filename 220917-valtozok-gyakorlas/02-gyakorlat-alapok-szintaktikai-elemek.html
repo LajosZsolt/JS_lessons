@@ -1,0 +1,76 @@
+<script>
+
+    3 + 2             // kifejezés
+   "hello world"      // kifejezés
+   alert(3 + 2);      // utasítás   (; miatt)
+   console.log("hello world");   // utasítás
+
+
+
+   // Melyek literálok?
+
+   3 + 2       // NEM: operátor szerepel benne ---> felbontható részkifejezésekrere
+               // - a kifejezésben a + egy operátor
+               // - az operátornak két operandusa van
+               //   - a 3 literál és a 2 literál
+               //   - a 3 és a 2 önmaga is kifejezés -- literális kifejezések
+
+                // szóközkarakterek (whitespace): a nyelvi elemek közé írhatóak tetszőlegesen
+                // kódformázás gyanánt
+                // - szóköz
+                // - tab
+                // - sortörés
+
+   3           // szám literál
+   +           // NEM: operátor
+   2           // szám literál
+   "hello world"  // string literál
+   "hello"        // string literál
+   "world"        // string literál
+
+
+
+// Melyek az operátorok?    
+
+3 + 2                        // kifejezés
+                             // +
+
+"hello" + " " + "world"      // kifejezés
+                             // + és +
+
+10 - 8                       // kifejezés
+                             // -
+
+// Melyik operátornak mik az operandusai?
+// operandus: az érték, amivel az operátor dolgozik
+
+"hello" + " " + "world"
+
+"hello"   // operandus
+  +       // operátor
+" "       // operandus
+
+// várd eredmény: "hello "
+
+
+// HELYTELEN!!!
+" "
+ +
+"world"
+
+// várt eredmény: " world"
+
+// a kettő együtt "hello  world"  // figyeljük meg: két szóköz!
+
+// HELYES
+// - a műveleti sorrend miatt
+// - a kiértékelés során, mire a második + jön, már az eeddigi
+//   részeredményt tekintjük
+"hello "   // az ELŐZŐ operátor eredménye!
+ +
+"world"
+
+
+
+
+</script>

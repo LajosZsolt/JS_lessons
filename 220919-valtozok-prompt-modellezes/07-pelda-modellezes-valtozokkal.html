@@ -1,0 +1,35 @@
+<script>
+    // MODELLEZÉS VÁLTOZÓKKAL
+    // - ötlet: tekintsük a program futását az idő múlásával egyenlőnek
+    // - a program kezdetekor a változók értéke a kiinduló állapot
+    // - a program végén a változók értéke az idő múlásával előálló
+    //   végállapot
+
+    // PÉLDA 1: csere-bere
+
+    // 1) kiinduló állapot
+
+    let aliceKonyv = "Dune";
+    let bobKonyv = "Urodusszeia";
+
+    // 2) alice és bob kicserélik egymás könyveit
+    // - tetszőelges kód, a lényeg, hogy a feladatban leírt végeredményt
+    //   idézzük elő
+
+    let asztal = aliceKonyv;
+    aliceKonyv = bobKonyv;     // aliceKonyv: "urodusszeia"  bobKonyv: "Urodusszeia"  asztal: "Dune"
+    bobKonyv = asztal;         // aliceKonyv: "urodusszeia"  bobKonyv: "Dune"  asztal: "Dune"
+
+
+    // 3) végállapot
+    aliceKonyv  // "Urodusszeia"
+    bobKonyv    // "Dune"
+
+    // TEHÁT: a változók állapota korrektül leírja
+    // a könyv csere megtörténtét
+
+    // FIGYELJÜK MEG: ez lényegében a változók cseréje
+
+    ////////////////////////////////////////////
+
+</script>

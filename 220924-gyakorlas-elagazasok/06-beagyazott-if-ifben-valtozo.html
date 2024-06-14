@@ -1,0 +1,22 @@
+<script>
+    // Beágyazott if
+
+    let nyelvviszga = confirm("Van-e nyelvvizsgád?");
+
+    if(nyelvviszga) {
+        let szint = prompt("Vizsgaszint?");   // ez csak az if blokkon belül lesz látható
+        // az if-en belül létrehozott változó(k) csak az if blokkon belül láthatóak
+
+        if(szint == "alap") {
+            alert("alap");
+        } else if(szint == "kozep"){
+            alert("közép");
+        } else {
+            alert("emelt");
+        }
+    } else {
+        alert("Nincs nyelvvizsga");
+        // alert(szint); // ez itt hibár fog futni, mert nem látja a "szint" változót
+    }
+
+</script>

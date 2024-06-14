@@ -1,0 +1,32 @@
+<script>
+   // 1. Melyik kifejezésnek lesz a típusa string és melyiknek number?
+   // Mi lesz a kifejezés értéke?
+
+   3 + 2       // number  5
+   "3" + "2"   // string  "32"
+   3 + "2"     // string  "32"    mivel a + operátor konkatenál, ha valamely operandus string
+   "3" + 2     // string  "32"
+   "3 + 2"     // string "3 + 2"
+   10 - 8      // number 2
+   "10" - "8"  // number 2        NEM "2"
+   10 - "8"    // number 2
+   "10" - 8    // number 2
+
+   // Melyik esetben történik konkatenáció és melyikben összeadás?
+
+3 + 2        // összeadás
+"3" + "2"    // konkatenáció      mivel string operandusok vannak
+3 + "2"      // konkatenáció      mivel az egyi operandus string
+"3" + 2      // konkatenáció
+"3 + 2"      // ez egy string literál
+
+// kérdés:
+// - ebben az esetben is string literál-e a "3+2"?
+// - IGEN, literál marad
+//   - viszont TÁGABB környezetétt tekintve OPERANDUS is
+//     - a - operandusa
+//   - SŐT az egész kifejezés kontextusában a "3+2"-1 kifejezésnek
+//     egy részkifejezése is
+"3+2"-1
+
+</script>

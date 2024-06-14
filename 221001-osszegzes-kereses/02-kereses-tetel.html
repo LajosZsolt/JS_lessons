@@ -1,0 +1,25 @@
+<script>
+    // (lineáris) keresés
+    // megnézzük, hogy elem benne van-e a tömbben
+    // lehet, hogy benne van, de lehet, hogy nincs benne a keresett elem a tömbben
+
+    // Példa
+    let t = ["Béla", "Kati", "Mari", "Ede"];
+    let j = 0;  // ciklus változó
+    let found = false;  // ebbe a segédváltozóba tárolom el, hogy megvan-e az adott elem a tömbben
+    // let name = prompt("Név?");
+
+    while(j < t.length && !found){
+        if(t[j] == "Kati"){
+            found = true;
+        }
+        j = j + 1;
+    }
+
+    if(found) {
+        console.log("Megtalátam.")
+    } else {
+        console.log("Nem találtam meg.")
+    }
+
+</script>

@@ -1,0 +1,26 @@
+<script>
+    // LET, CONST, VAR
+    // - háromféleképpen tudunk változót létrehozni
+    // - var: régi, kerülendő
+    // - let, const: modern
+    //   - mi csak a let kulcsszót fogjuk használni
+
+    // ezek mind helyes, létező deklarációs módok
+    var a = 42;  // régi, kerülendő
+
+    // modern
+    let b = 42;  // ezt fogjuk használni a képzés során
+                 // - hagyományos értelemben vett változó
+
+    const c = 42;  // ún. konstans változó
+                   // - egyszer adhatunk neki értéket, amit utána
+                   //   nem tudunk megváltoztatni
+
+    c = 55;        // HIBA: a c változó konstans változó!
+                   // Uncaught TypeError: Assignment to constant variable.
+
+    // const d;       // SZINTAKTIKAI HIBA: kötelező létrehozáskor értéket adni
+                   // a konstanst változónak
+    d = 55;
+
+</script>

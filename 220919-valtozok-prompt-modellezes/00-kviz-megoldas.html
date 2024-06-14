@@ -1,0 +1,18 @@
+<script>
+    let a = 42;  // a: 42
+    let b = 55;  // a: 42  b: 55
+    let c;       // a: 42  b: 55  c: undefined
+    
+    a = b;       // a <- b
+    // a: 55  b: 55  c: undefined
+    
+    b = c;       // b <- c
+    // a: 55  b: undefined  c: undefined
+    
+    c = a;       // c <- a
+                 // a: 55  b: undefined  c: 55
+
+    a  // 55
+    b  // undefined
+    c  // 55
+</script>

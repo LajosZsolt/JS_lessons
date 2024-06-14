@@ -1,0 +1,33 @@
+<script>
+    // BUKTATÓ 1: {} elhagyható
+    // - csak az első feltételt követő utasítás tartozik az elágazáshoz
+
+    // azt szeretnénk, hogy a foo és bar csak akkor jelenjen meg, ha
+    // a feltétel igaz
+    // - figyeljük meg: elhagytuk a {}
+    let v = prompt();
+    if (v < 3)
+       alert("foo");
+       alert("bar");  // figyeljük meg: bar mindig megjelenik,
+                      // `v` értékétől függetlenül
+                      // - elhagytuk a {}, ezért az elágazásnak nincs
+                      //   utasításblokkja
+                      // - az elágazás feltétele utáni első utasítás lesz
+                      //   az egyetlen, amit az elágazásba ért a böngésző
+
+    /////////////////////////////////////////////////////////////////////
+
+    // BUKTATÓ 2: ; a feltétel után és a {} előtt
+
+    // írtunk egy elágazást, de az MINDIG lefut
+    let a = prompt();  // tfh, beírta a felhasználó, hogy 5
+    if (a < 3); {      // - mégis lefut... miért?
+        alert("foo");          
+        alert("bar");
+    }
+
+    // INDOKLÁS: technikailag kiértékeli if-et, csak a feltétel nem csinál semmit
+    // - a ; az if feltétel után LEZÁRJA az elágazást
+    // - olyan, mintha nem írtunk volna feltételt
+    // - a {} utasításblokk csak simán egy utasításblokk feltétel nélkül
+</script>

@@ -1,0 +1,68 @@
+<script>
+    // PÉLDA: TÖMB BEJÁRÁSA
+
+
+    let t = [42, 55, 70];
+
+    let i = 0;
+    while (i < t.length) {
+        console.log(t[i]);
+        i = i + 1;
+    }
+
+    // kiírt elemek: 42 55 70
+
+    //////////////////////////////////////////////////////
+
+    // PÉLDA: TÖMB FELDOLGOZÁSA
+    // - valamit csinálunk a tömb egyes elemivel
+    // - pl. megszorozzuk kettővel
+
+    let j = 0;
+    while (j < t.length) {
+        let dupla = t[j] * 2;
+        console.log(dupla);
+        j = j + 1;
+    }
+
+
+    //////////////////////////////////////////////////////
+    
+    // PÉLDA: TÖMB FELTÖLTÉS
+    
+    let u = [];
+    let k = 0;
+    let mennyi = prompt("hany elemet kersz?");
+    
+    while (k < mennyi) {
+        u[k] = prompt("adj meg egy szamot!");
+        k = k + 1;
+    }
+    
+    //////////////////////////////////////////////////////
+
+    // PÉLDA: BEKÉRÉS, AMÍG ÉRVÉNYTELEN AZ INPUT
+    // - figyeljük meg: az n ciklusváltozó maga az érték, ami kell
+    //   - nincs külön index vagy bármi egyéb segédváltozó
+    let n = Number(prompt("adj meg egy szamot!"));  // inicializáció
+    while(Number.isNaN(n)) {  // feltétel
+        n = Number(prompt("adj meg egy szamot!"));  // léptetés
+    }
+    // ezen a ponton garantáltan nem NaN az `n` értéke
+
+    //////////////////////////////////////////////////////
+
+    // PÉLDA: BEKÉRÉS, AMÍG USER FOLYTATJA
+
+
+    let folytat = true;  // inicializáció
+    while(folytat) {  // feltétel
+        let m = Number(prompt("adj meg egy szamot!"));
+        console.log("megadott szam " + m);
+        folytat = confirm("meg egy?");  // léptetés
+    }
+
+    
+
+
+</script>

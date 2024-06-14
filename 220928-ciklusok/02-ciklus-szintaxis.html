@@ -1,0 +1,62 @@
+<script>
+    /*
+    ciklus szintaxis
+  - példa: `ciklus-szintaxis`
+    - while kulcsszó
+    - feltétel
+    - utasításblokk
+      - figyelem: if-hez hasonló buktatók
+        - {} elhagyható
+        - ; a feltétel után
+    */
+
+    // WHILE CIKLUS SZINTAXIS
+    // - a ciklus szintaktikailag egy utasítás
+    // - while kulcsszó: ez jelzi, hogy ciklus utasítás következik
+    // - a while után () között a ciklus feltétele
+    //   - a ciklus utasításblokkja (ciklusmag) akkor fut le, ha a feltétel igaz
+    // - a feltétel után {} között az utasításblokk
+    // - FIGYELEM: ugyanazok a csapdák, buktatók, mint az if szintaxisnál
+    //   - {} elhagyható: csak az első utasítás fog a ciklushoz tartozni
+    //   - ; írható a ciklusfeltétel után, a ciklusmag elé () és  {}
+    //     - az utasítások egyáltalán nem fognak a iklushoz tartozni
+
+    // CIKLUSVÁLTOZÓ: a ciklus végrehajtását vezérlő változó
+    // - a ciklus működését szabályozza: rendszerint a ciklusváltozó értékétől függően
+    //   lesz vége a ciklusnak
+    // - a cikklus általában használjuk valamire
+    //   - a ciklus célja gyakran az, hogy a ciklusváltozó ciklikusan változó értékét
+    //     használjuk
+
+    // CIKLUS ÁLTALÁNOS SZERKEZETE
+    // - 3 fő rész
+    // - inicializáció: az ún. CIKLUSVÁLTOZÓT (LOOP VARIABLE) kezdőállapotba hozzuk
+    // - feltétel: a ciklusváltozót felhasználó kifejezés, ami kezdetben igaz és előbb
+    //   vagy utóbb hamis lesz
+    // - léptetés: a ciklusváltozót a ciklusmagban (a ciklusBAN) változtatjuk úgy,
+    //   hogy a ciklus feltétele pontosan akkor sérüljön, amikor a ciklusnak vége
+    //   kell legyen
+    //   - pl. pontosan akkor hagyjuk abba a csokievést, amikor elfogyott a csoki
+
+
+    // ciklusváltozó: kockak
+    // - vezérli a ciklust: ha kockak == 0 akkor a ciklusnak vége
+    // - használjuk a ciklusban a feladat megoldáshoz
+    //   - a kockak értékét használjuk arra, hogy kiírjuk, hány kocka van még hátra
+    let kockak = 3;  // ciklusváltozó inicializációja
+    while (kockak >= 0) {  // ciklus feltétel
+                          // - kezdetben igaz, hogy kockak > 0 (hála az égnek), úgyhoyg elkezdhetünk csokit enni
+                          // - előbb-utóbb kockak == 0 lesz (sajnos) és itt abba kell hagyni a csokievést
+        console.log("megettünk egy kockát");
+        kockak = kockak - 2;  // léptetés: a ciklusváltozó értékét ÚGY változtatjuk, hogy a ciklusfeltétel előbb-utóbb sérüljön
+                              // - nem kell, hogy azonnal sérüljön a ciklusfeltétel
+                              // - lényeg: pontosan akkor sérüljön, amikor pontosan elértünk a feladat végére
+        console.log("megmaradt kockák száma: " + kockak);
+    }
+
+    // következmény: a ciklusváltozó kezdőértékét, a ciklus feltételét és a ciklusváltozó
+    //               léptetését tetszés szerint megadhatjuk, a lényeg, hogy a feladatot megoldjuk
+
+
+
+</script>

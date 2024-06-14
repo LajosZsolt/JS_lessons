@@ -1,0 +1,36 @@
+<script>
+    // MODELLEZÉS TÍPUSFELADAT 2
+    // - idő múlásával vagy esemény bekövetkeztésvel beálló
+    //   állapotváltozást íruk le
+
+    // PÉLDA 1: egyenleg kalkulátor
+
+    // KIINDULÓ ÁLLAPOT
+
+    // ennyibe kerül a termék
+    let ar = 300;
+    // ennyi van készleten
+    let keszlet = 3;
+    // ennyi kell nekünk
+    let vasarolando = 1;
+    // ennyi pénzünk van
+    let penztarca = 7000;
+
+    // veszünk 1 db-ot a 300 forintos valamiből
+
+    // VÉGÁLLAPOT
+
+    // csökkentjük a pénztárcánkban a pénzt
+    penztarca = penztarca - ar * vasarolando;
+    // figyelem: csökkentjük a készlet számot is
+    // - a változókat KONZISZTENS állapotra hozzuk
+    // - később ezt az adatbázisban tárolt adatoknál fogjuk csinálni
+    keszlet = keszlet - vasarolando;
+    // opcionális: attól függ, hogy pontosan mikémt értelmezzük a `vasarolando` változót
+    vasarolando = 0;  // ha pl. jelezni akarjuk, hogy már nem kell vásárolni többet
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+    
+
+</script>

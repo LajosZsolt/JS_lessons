@@ -1,0 +1,178 @@
+<script>
+    // RÉSZKIFEJEZÉSEK (SUBEXPRESSION)
+    // - emlékezzünk: kifejezésekbe más kifejezések írhatóak
+
+    3 + (1 + 1)  // (1 + 1) egy BEÁGYAZOTT (NESTED) kifejezés
+                 // - az (1 + 1) kifejezés a 3 + (1 + 1) kifejezésnek a részkifejezése
+
+    // KIFEJEZÉSEK KIÉRTÉKELÉSE (EXPRESSION EVALUATION)
+    // - a számítógép által végzett tevékenység
+    // - a kifejezés értékének, eredményének a kiszámítása
+
+    // KIFEJEZÉS ÉRTÉKE (EXPRESSION VALUE)
+    // - a kifejezés kiértékelése során előállt eredmény
+
+    // KIFEJEZÉS KIÉRTÉKELÉSÉNEK A MENETE
+    // - emlékezzünk: matematikai műveleteknek van kiértékelési sorrendje
+    //   - előbb az osztás, szorzás, utána az összeadás, kivonás
+    //   - ha egyenrangú művelet vannak, akkor balról jobbra
+    //   - zárójelezéssel finomhangolhatjuk a sorrendet
+    // - a programozásban a műveletek kiértékelés sorrendjét PRECEDENCIÁNAK (PRECEDENCE)
+    //   nevezzük
+    // - egy kifejezés kiértékelése úgy történik, hogy a kifejezést a precedencia alapján
+    //   részkifejezésekre bontjuk és előbb a részkifejezések értékét számítjuk ki
+
+    // PÉLDA 1
+    // kiinduló kifejezés
+    3 + 2 * 2   // * erősebb, mint a +
+
+        2 * 2   // ez lesz az első részkifejezés, amit kiszámol
+
+    3 + 4
+
+        3 + 4
+    7
+
+    // PÉLDA 2
+    1 + 1 + 1  // csak + műveletek vannak, úgyhogy balról jobbra haladunk
+
+        1 + 1
+
+    2 + 1
+
+        2 + 1
+
+    3
+
+    // PÉLDA 3
+    1 + 1 + "1"
+
+        1 + 1
+
+    2 + "1"
+
+        2 + "1"
+
+    "21"
+
+    // PÉLDA 4
+    "1" + 1 + 1
+
+        "1" + 1
+
+    "11" + 1
+
+        "11" + 1
+
+    "111"
+
+    // PÉLDA 5
+    1 + "1" + 1
+
+        1 + "1"
+
+    "11" + 1
+    
+        "11" + 1
+
+    "111"
+
+    // PÉLDA 6
+    (1 + "1") + 1
+
+        (1 + "1")   // "11"
+
+    "11" + 1
+
+        "11" + 1    // "111"
+
+    "111"
+
+    // PÉLDA 7
+    "1" + (1 + 1)
+
+        (1 + 1)  // 2
+
+    "1" + 2
+
+        "1" + 2  // "12"
+        
+    "12"
+
+    // FIGYELEM: nem a csak a kifejezésben szereplő értékek típusa számít,
+    //           hanem a művelet is!
+
+    // PÉLDA 8
+    1 + "a" + 2
+
+        1 + "a"
+
+    "1a" + 2
+
+        "1a" + 2
+
+    "1a2"
+
+    // PÉLDA 9
+    1 - "a" + 2
+
+        1 - "a"  // NaN   <--- speciális érték: matmetikailag értelmezettlen műveletet jelöl
+                 //            - később részletezzük 
+
+    NaN + 2
+
+        NaN + 2  // NaN: egyszer NaN, mindig NaN
+
+    NaN
+
+    // PÉLDA 10
+    1 - 2 + "a"
+
+        1 - 2  // -1
+
+    -1 + "a"
+
+        -1 + "a"  // "-1a"
+
+    "-1a"
+
+    // LITERÁL (LITERAL): egy konkrét érték forráskódbeli leirata, megjelenítése
+
+    3    // literál: szó szerint a "hármas szám", mint érték
+         // - szám literál
+
+    "3"  // literál: szó szerint a "3", mint számjegy, leírva, szövegesen
+         // - string literál
+
+    // A LEGEGYSZERŰBB KIFEJEZÉSEK A LITERÁLOK
+
+    3 + 2  // 3 + 2 egy kifejezés
+
+        3  // 3 a 3 + 2 egy részkifejezése
+           // - nem bontható tovább, mert ezt egy literális kifejezés
+
+        2  // 2 szinté na 3 + 2 részkifejezése
+
+    // VEGYÜK ÉSZRE: a kifejezések az operátorok mentén bonthatóak részkifejezésekre
+
+    // ELMÉLETI HÁTTÉR
+    // - a kifejezésekből az operátorok mentén (az operátor perecedenciája alapján)
+    //   egy úgynevezett KIFEJEZÉS FÁT (EXPRESSION TREE) építhetünk
+    // - ezt a fát jól ismert gráfalgoritmusokkal különbző célokból feldolgozhatjuk
+    //   - pl. kiszámíthatjuk az eredményét
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,129 @@
+<script>
+    // TÍPUS (TYPE)
+    // - emlékezzünk: dolgoztunk számokkal és stringekkel
+    //   - nem volt mindegy, hogy + számokkal, stringekkel vagy vegyes értékekkel dolgozik
+    //   - az értékeknek a "milyensége" befolyásolja, hogy hogy viselkedik
+    //     a programunk
+    // - az értékeknek ún TÍPUSA van
+    //   - az érték egy jellemzője
+    //   - azt határozza meg, hogy milyen műveletek végezhetőek vele
+    //   - milyen környezetben hogy viselkedik az érték
+    // - két alapvető típus, amit eddig láttunk
+    //   - szám: number
+    //   - szöveg: string
+
+    // ELMÉLETI KITEKINTÉS: ADATÁBRÁZOLÁS
+
+    // MORSE-KÓD
+    // - hosszú és rövid jelekkel kódolunk betűket, számokat, írásjeleket
+    // - a jelek közötti szünetet is kódoljuk
+    // - valamilyen jelátviteli módszerrel tudunk kommunikálni
+    //   - pl. heliográfia: napfény visszatükrözödéssel egy tükörrel küldünk
+    //     "hosszú" és "rövid" fényjeleket és a túloldalon pl. Morse-kód alapján
+    //     értelmezik azokat
+
+
+    42 // ....-       ..---      a két jelsorozatk között 7 egység szünet van
+
+    // HOGY ŰKÖDIK A SZÁMÍTÓGÉP?
+    // - elektromágneses jelsorozatokat tárol
+    //   - memória, merevlemez, SSD
+    // - az alkatrészek elektromágnese jelsorozatokkal kommunikálnak
+    //   - processzor és memória, processzor és a monitor, ...
+
+    // BINÁRIS KÓD
+    // - bármilyen KÉT JELBŐL álló kódrendszer
+    // - a számítógépes adatbárázolás és adatkommunkáció alapja
+    // - a zámítógép effektíve két jelből áll nyelvet ismer
+    //   - ezt szoktuk úgy ábrázolni, hogy 1 és 0
+    //   - valójában "magas" feszültség (1) és "alacsony"/"nincs" feszültség (0)
+    // - Morse-kód helyett a mindenféle alkatrészek hardvertechnológiai szabványok szerint
+    //   kommunkálnak, illetve minden processzornak megvan a saját "nyelve"
+    // - a bináris legkisebb egysége a BIT, aminek az állapota a két jel közül valamelyik
+
+    // tekintsünk egy jelsoozatot a memóriában tárolva
+
+    10111011   // mit kódol ez a jelsorozat?
+               // - attól függ, hogy hogyan értelmezzük!
+               // - honnan tudjuk, hogy hogyan kell értelmezni?
+               //   - onnan, hogy megnézzük a TÍPUSINFORMÁCIÓT
+               // - mi az a típusinformáció? hol tudom megnézni?
+               //   - megállapodás alapján az első pár bit, pl. az első
+
+
+    
+    /*
+
+    // legyen egy képzeletbeli kódolásunk
+    // számok: 1, 2, 3
+    // betűk: a, b, c
+
+
+    // megállapodhatunk úgy, hogy ha az első bit 0, akko a jelsroozat számot kódol
+    // ha pedig az els bit 1, akkor szöveget
+    
+    001     1
+    011     2
+    111     3
+
+    001     a
+    011     b
+    111     c
+
+    minden jelsorozat 4 hosszú, az első bit jelzi, hogy szám vagy szöveg
+
+    mit kódolnak az alábbi jelsorozatok?
+
+    1001    a
+    0111    3
+    0101    ???   <--- erre a jelsoroztra nincs szabályunk!
+                       - a valódi világban az ilyen jeksorozatok a legkülönfélébb hibás működéseket okozzák
+                       - amikor harvderelemekt terveznek (számítógépbe elektronikát vagy autókba vagy repülőkbe stb)
+                         az ilyen "kósza" jelsorozatok iszűrése elsőrendű feladat
+
+
+    1000
+    */
+
+
+    // MIÉRT FONTOS BESZÉLNI AZ ADATÁBRÁZOLÁSRÓL?
+    // - amikor kijelöljük, hogy mi a string  és mi a szám, akkor segítünk a gépnek
+    //   hogy pontosn mit kell vagy mit lehet csinálni azzal az értékkel
+    // - a számítógép csak az általa "kigondolható" dolgokkal tud dolgozni
+    //   - a "kigondolható" dolgok a számítógép és a programnyelv által ábrázolható
+    //     értékek összessége
+
+
+    // ha megállapdunk abban, hogy minden jelsorozat 4 hosszú, és a fenti szabályrendszert tekintjük
+    // akkor csak az alábbi üzenet kódolhatóak
+
+    1
+    2
+    3
+    a
+    b
+    c
+
+    // + ezeknek a kombinációi...
+    // - nem lehet kódolni olyasmit, amit ezek nem írnak le, pl "d" betűt
+    // - hacsak nem találnuk ki egy "szabályt a szabályok felett"
+    //   - pl. két db "a" betű kódol egy "d" betűt, lásd: táviratokan ö helyett ou
+
+    // KÖVETKEZMÉNY: nem lehet bármit leprogramozni
+    // - pl. nem ismer minden számot a számítógép
+    // - pl. nem minden stringet lehet ábrázolni
+
+    // ELMÉLETI HÁTTÉR: LEBEGŐPONTOS SZÁMÁBRÁZOLÁS (FLOATING POINT)
+
+    // TÍPUS
+    // - az elvégezhető műveletek adja meg
+    // - az adott típusba tartozó értékek összességét adja meg
+    // - a számítógépes adatábrázolás szabályait határozza meg
+    // - azok értékek, amiket ugyanúgy ábrázolunk és ugyanazokat a műveletek lehet
+    //   végezni  rajtuk egyazon típusba szokás sorolni
+    //   - megj: némelyik nyelv ennél szigorúbban működik, ez nem univezális
+
+
+
+
+</script>

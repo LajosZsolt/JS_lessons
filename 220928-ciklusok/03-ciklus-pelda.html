@@ -1,0 +1,30 @@
+<script>
+// input paraméterek
+// - kockák számát
+// - hányasával esszük a csokit
+let kockak = 8;  // ciklusváltozó inicializációja
+let adag = 2;
+
+// algoritmus
+while (kockak > 0) {  // ciklus feltétel
+
+    if (kockak < adag) {
+        kockak = 0;
+    } else {
+        kockak = kockak - adag;  // léptetés: a ciklusváltozó értékét ÚGY változtatjuk, hogy a ciklusfeltétel előbb-utóbb sérüljön
+
+    }
+    console.log("megettünk egy kockát");
+                        // - kezdetben igaz, hogy kockak > 0 (hála az égnek), úgyhoyg elkezdhetünk csokit enni
+                        // - előbb-utóbb kockak == 0 lesz (sajnos) és itt abba kell hagyni a csokievést
+                            // - nem kell, hogy azonnal sérüljön a ciklusfeltétel
+                            // - lényeg: pontosan akkor sérüljön, amikor pontosan elértünk a feladat végére
+    console.log("megmaradt kockák száma: " + kockak);
+}
+
+// HÁZI: egészítsük ki a kódot úgy, hogy kiírju, hogy összesen hányszor vettünk a csokiból
+// - pl. ha 4 kocka van és 2 kockánként veszünk, akkor 2-szer vettünk
+// - pl. ha 3 kocka van és 2 kockánként veszünk, akkor 2-szer vettünk
+// - pl. ha 5 kocka van és 2 kockánként veszünk, akkor 3-szor vettünk
+// - pl. ha 1 kocka van és 5 kockánként veszünk, akkor 1-szer vettünk
+</script>

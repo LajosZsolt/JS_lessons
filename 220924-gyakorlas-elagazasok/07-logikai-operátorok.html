@@ -1,0 +1,157 @@
+<script>
+    // Logikai operátorok
+
+    // - műveletek, amelyek boolean értékekkel dolgoznak
+    // - boolean értékeket produkálnak
+
+    // - && (ÉS, konjukció)
+    // - || (VAGY, diszjunkció)
+    // - !  (TAGADÁS, negáció)
+</script>
+<script>
+    // Rávezetés: logikai ÉS
+    // Példa: összefüggő feltételek írása
+
+    let fagy = "vanilia";
+    let gomboc = 3;
+
+    if(fagy == "vanilia") {
+        if(gomboc >= 3) {
+            alert("itt a fagyid");
+        }
+    }
+
+    // beágyazott feltétel helyett logikai ÉS
+    if(fagy == "vanilia" && gomboc >= 3) {
+        alert("itt a fagyid");
+    }
+
+    // LOGIKAI "ÉS", KONJUKCIÓ, &&
+    // - két feltétel együttes teljesülése szükséges
+    // - ha bármelyik oldali kifejezés hamis, akkor az egész kifejezés hamis
+
+    // ÉS operátor igazságtáblája
+
+    // &&   | IGAZ  | HAMIS
+    // IGAZ | IGAZ  | HAMIS
+    // HAMIS| HAMIS | HAMIS
+
+    // Példa: 
+    // ahhoz, hogy felvegyenek kell minimum 110 pont és emelt szintű érettségi
+
+    let pont = 112;
+    let emelt = false;
+
+    if(pont >= 110 && emelt) {
+        alert("fevettek");
+    } else {
+        alert("nem vettek fel"); // ez az alert fog lefutni, mert a feltétel egyik oldala hamis  
+    }
+</script>
+<script>
+    // Rávezetés: logikai VAGY
+
+    // szándék: bármely fetétel teljesül ugyanazt kell csinálni
+    if(feltetel1) {
+        // utasítások
+    } else if(feltetel2) {
+        // ugyanazok az utaítások
+    } else if(feltetel3) {
+        // ugyanazok az utaítások
+    }
+
+    if(feltetel1 || feltetel2 || feltetel3){
+        // utasítások
+    }
+
+    // LOGIKAI "VAGY", DISZJUNKCIÓ, ||
+    
+    // - feltételek közül valamelyiknek (legalább az egyinek) teljesülnie kell
+    // - ha bármelyik kifejezés igaz, akkor az egész kifejezés igaz
+
+    // VAGY operátor igazságtáblája
+
+    // ||    | IGAZ    |  HAMIS
+    // IGAZ  | IGAZ    |  IGAZ
+    // HAMIS | IGAZ    |  HAMIS
+
+    // Példa: 
+    // ha nagyon süt a nap vagy másnapos vagyok akkor felveszem a napszemüvegem
+
+    let napsutes = true;
+    let masnapossag = false;
+
+    if(napsutes || masnapossag) {
+        alert("Felveszem a napszemüvegem"); // ez fut le, mert a kifejezés egyik oldala igazra értékelődött ki
+    } else {
+        alert("Nem veszem fel a napszemüvegem");
+    }
+
+</script>
+
+<script>
+    // LOGIKAI "NEM", TAGADÁS, NEGÁCIÓ, !
+    // - egy adott igazság érték ellentéte
+
+    // !  | IGAZ  | HAMIS
+    //    | HAMIS | IGAZ
+
+    // Példa: akkor mehetsz egytemre, ha NEM buktál meg érettségin
+
+    let bukas = true;
+
+    // false
+    // ha NINCS bukás, NINCS probléma
+    if(!bukas) { // pontosan akkor true, ha a bukas == false
+        alert("Irány az egyetem");
+    } else {
+        alert("Fuss neki újra!");
+    }
+
+    // Példa: ha NINCS barát, de van pia akkor buli
+    // - a negáció az erősebb, mint a konjukció(és) és a diszjunkció(vagy)
+    let barat = true;
+    let pia = true;
+
+    if(!barat && pia) {
+        alert("kis buli");
+    } else {
+        alert("nagy buli");
+    }
+</script>
+<script>
+    // Példa: logikai operátorok működése
+
+    // true ÉS true
+    true && true   // true
+
+    // true ÉS false
+    true && false  // false
+
+    // true VAGY false
+    true || false // true
+
+    // NEM true
+    !true   // false
+
+    // NEM-NEM true
+    !!true   // true
+
+    !!!true  // false
+
+    // Példa: logikai operátorok precedenciája
+
+    // a ! erősebb
+    !true && true  // false
+    true || !true  // true
+
+    // && erősebb, mint a ||
+    true && false || true && false    // (true && false) || (true && false)
+                                      //          false  || false
+                                      //                false
+    
+
+    // Tipp: mindig zárójelezzük a bonyolult logikai kifejezéseket - egyértelműbb a kód
+    // Tipp: ha lehet kerüljük el a bonyolult logikai kifejezéseket
+    //        - amit lehet tegyünk beszédes változóba
+</script>

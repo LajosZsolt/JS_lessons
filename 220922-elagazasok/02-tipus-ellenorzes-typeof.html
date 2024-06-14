@@ -1,0 +1,37 @@
+<script>
+    // TYPEOF OPERÁTOR
+    // - egy megadott kifejezés típusát adja meg
+    // - az eredmény MINDIG string
+    //   - a típusnak a neve
+
+    typeof 42    // "number"     string az eredmény, és a string értéke a típus neve
+    typeof "42"  // "string"
+
+    typeof 3+2   // "number2"   FIGYELEM: typeof precedenciája nagyobb, mint a +,
+                 //                       ezért előbb hajtódik végre
+
+
+            typeof 3  // "number"
+
+        "number" + 2  // "number2"
+
+    let v = 55;
+
+    typeof v  // "number"
+
+    let a;
+    typeof a  // "undefined" 
+    
+    let b = NaN;
+    typeof b  // "number"    // FIGYELEM: NaN, speciális SZÁM, ami azt jelzi, hogy
+                             //           matematikailag értlemezhetetle művelet történt 
+                             //           VAGY
+                             //           sikertelen számmá alakítást
+
+   typeof v + 1   // "number1"
+
+        typeof v    // "number"
+
+    "number" + 1    // "number1"
+
+</script>

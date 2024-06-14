@@ -1,0 +1,69 @@
+<script>
+    // HIBA: Number nem a számságot jelölő típus
+    // - a != Number az NEM azt jelenti  szgépnek, hogy "a típusa nem szám"
+    // - a szgép azt fogja nézni, hogy az a értéke (amit beírtunk),
+    //   az ugyanaz a dolog-e, mint a Number
+    let a = Number (prompt("Irj be egy szamot"))
+    if (a != Number) {alert ("Szamot irj" ) }
+
+
+
+    // HIBA: String, ugyanúgy, mint a Number nem a stringséget jelölő típus
+    // - lásd fentebb a Numberrnél a magyarázatot
+    // - másik hiba: értékadás  van (egy = a két == helyett)
+    let valami = Number(prompt("Adj meg valamit"))
+    if (valami = String) {
+        alert("számot kell megadni")
+    }
+
+
+    // HIBA: Number miatt csakis szám lehet a típusa az értéknek
+    // - ráadásul: ha az érték nem szám (pl. "hello"), akkor Number("hello") NaN lesz,
+    //   ami viszont typeof NaN eredméne "number"
+    // - nem szűrjük ki a NaN esetet!
+    let n = Number(prompt("Adj meg valamit"))
+    if (typeof n != "number") {
+        alert("számot kell megadni")
+    }
+
+
+
+    // JÓL MŰKÖDIK, DE TRÜKKÖS
+    let b = Number(prompt());  // b értéke NaN vagy nem NaN, hanem egy számszerű szám
+    if(b === Number(b)){       // HA b értéke megegyezik azzal, hogy b-t számmá alakítjuk, akkor jók vagyunk
+                               // - emlékezzünk: b értéke ezen a ponton már eleve egy számszerű szám vagy NaN
+                               // - ha számszerű szám, amit ISMÉT számmá alakítunk, nyilván egyenlő lesz önamgával
+                               // - ha NaN, akkor viszont nem lesz egyenlő önmagával sem, ezért nem vagyunk jók
+        alert('ezaz!')
+    } else {
+        alert('neeem')
+    }
+
+    // JÓL MŰKÖDIK, UAZ, MINT ELŐBB, CSAK FORDÍTOTT FELTÉTEL LOGIKA
+    let szam = (prompt("Adjon meg egy számot!"));
+    if (Number(szam) != szam) {
+    alert ("szamot adj meg")
+    }
+
+
+    // JÓ MEGOLDÁS
+    let a1 = prompt("Adj meg egy erteket!")
+    a1 = Number(a1)
+
+    if (Number.isNaN(a1)) {  // megnézzük, hogy a beírt érték számmá alakítva NaN-e
+                             // - ha nem számot írtunk be, akkor NaN lesz a Number() eredménye
+                             // - ha számot írtunk be, akkor viszont as isNaN() hamis lesz
+        alert("Szamot kell megadni!")
+    }
+
+
+
+    // VIGYÁZAT
+    let a2 = prompt("Adj meg egy erteket!")
+    a2 = Number(a2)
+
+    if (a2 == NaN) {  // FIGYELEM: NaN speciális érték, NEM EGYENLŐ SAJÁT MAGÁVAL SEM
+                      // - külön tesztelendő az isNaN() használatával
+        alert("Szamot kell megadni!")
+    }
+</script>

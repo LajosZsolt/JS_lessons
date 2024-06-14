@@ -1,0 +1,195 @@
+<script>
+//   - tömb literál néhány elemmel
+//   - tömbelemek kiírása indexeléssel
+//   - fogalmakat később részletezzük
+
+    // PÉLDA: tömb literál
+
+    // tömb nélkül
+    let szam1 = 42;
+    let szam2 = 55;
+    let szam3 = 70;
+
+    // tömb használatával
+    // - figyeljük meg: mindegy, hogy hány értünk van
+    //   egy változó van a tömbnek
+    let tomb = [42, 55, 70];  // létrehoztunk egy tömböt
+                              // - három értéket tároltunk
+
+    let nevek = ["alice", "bob", "cecil"];  // tetszőleges értékeket tárolhatunk tömbben
+
+    // TÖMB LITERÁL
+    // - egy tömb forráskódbeli leirata
+    // - [] (szögletes zárójel, BRACKET) között, vesszővel elválasztott értékekkel adjuk
+    // - tömb maga is egy érték
+    // - a tömb egy úgynevezett ADATSZERKEZET (DATA STRUCTURE)
+    //   - van egy szerkezete, amiben különböző egyéb értékek
+    //     tárolhatóak
+    //   - a tömbben tárolt értékek külön-külön írhatóak,
+    //     olvashatóak, manipulálhatóak
+
+    //////////////////////////////////////////////////////
+    
+    // PÉLDA: TÖMBELEMEK KIÍRÁSA
+    // - tömb neve után írva a tömbelem úgynevezett INDEXÉT
+    //   kiolvashatjuk az ott tárolt értéket
+    // - figyeljük meg: [] használata, viszont kicsit másként
+    //   - [] jelentése attól függ, hogy hol szerepel a kódban
+    
+    let t = [42, 55, 70];
+    alert(t[0]);  // 42
+    alert(t[1]);  // 55
+    alert(t[2]);  // 70
+    
+    // INDEX: a tömbben tárolt elemek sorrendje
+    // - FIGYELJÜK MEG: nulláról indul, nem egyről!
+    
+    //////////////////////////////////////////////////////
+    
+    // TÖMBÖK ÉS KIFEJEZÉSEK
+    // - tetszőleges érték tárolható a tömbben
+    //   - akár vegyes is
+    
+    
+    [42, "hello", undefined, false, NaN]  // fura, de abszolút értelmezhető tömb érték
+    
+    // változók, összetett kifejezések is lehetnek tömbben
+    let v = "valami";
+    [3 + 2, v, v + "foobar"]  
+    
+    // ÜRES TÖMB
+    let ures = [];  // első ránézésre hasztalan, de létező dolog
+
+    // MEGJEGYZÉS: ha a tömbök maguk is kifejezések, akkor
+    // tömböt tárolhatunk tömbben
+    // - pl. felhasználók adatai (azonsoító, email, felhasználói név)
+    // - nem részletezzük
+
+    let adatok = [
+        [42, "alice@example.com", "alice"],
+        [55, "bob@example.com", "bob"],
+        [70, "cecil@example.com", "cecil"],
+    ];
+
+    // BEÁGYAZOTT TÖMBÖK INDEXELÉSE
+
+    adatok[0][0] // 42
+    adatok[0][1] // "alice@example.com"
+    adatok[0][2] // "alice"
+    adatok[1][0] // 55
+    adatok[1][1] // "bob@example.com"
+    adatok[1][2] // "bob"
+    
+    //////////////////////////////////////////////////////
+
+    // ÉRTÉK BEÍRÁSA LÉTEZŐ TÖMBBE
+
+    let arr = [];  // létrehozunk egy üres tömböt
+
+    arr[0] = 42;   // [42]        beletettük a 42 értéket a tömbbe
+    arr[1] = 55;   // [42, 55]    beletettük az 55 értéket
+    arr[0] = 70;   // [70, 55]    ! FELÜLÍRTUK a 0 indexen tárolt érték
+
+    // FIGYELJÜK MEG: a [] indexelés az = értékadás bal oldalán
+    // is szerpelhet -- ilyenkor úgy működik, mint egy változó
+    // - megadhatjuk, hogy hova akarunk értéket írni
+
+    //////////////////////////////////////////////////////
+    
+
+    // INDEXEK, MINT KIFEJEZÉSEK
+    // - tömbindex tetszőleges kifejezé lehet
+    // - lényeg: 0 vagy pozitív szám legyen az eredmény
+
+    // indexek  0   1   2   3   4   5
+    let arr2 = [42, 55, 70, 33, 44, 98];
+    let idx = 3 + 2;   // 5
+
+    arr2[idx]     // 98    arr2[5]
+    arr2[idx-1]   // 44    arr2[4]    arr2[5-1]
+    arr2[idx-idx] // 42    arr2[0]    arr2[5-5]
+
+    //////////////////////////////////////////////////////
+
+    // TÖMB HOSSZA
+    
+    let t2 = [];
+
+    t2.length   // 0
+
+    t2[0] = "hello";
+
+    t2.length   // 1
+
+    // FIGYELJÜK MEG: az utolsó tömbindex az mindig a hossz - 1
+    // - mindig a tömb végére tudunk írni
+    t2[t2.length - 1] = 42;  // t2.length == 2
+    t2[t2.length - 1] = 55;  // t2.length == 3
+    t2[t2.length - 1] = 66;  // t2.length == 4
+
+
+    //////////////////////////////////////////////////////
+
+    // TÖMBÖK EGYENLŐSÉGE, MÁSOLÁSA, IDENTITÁSA
+
+    // FIGYELEM: a két tömb megegyezőnek tűnik
+    let egyik = [42, 55, 70];
+    let masik = [42, 55, 70];
+
+    egyik == masik  // false
+                    // - a két tömb UGYANOLYAN, de NEM UGYANAZ
+    
+    // a tömbök ún. REFERENCIA TÍPUSOK (REFERENCE TYPE)
+    // - a változóban nem a tömb tárolódik, hanem egy
+    //   referencia a tömbre
+    // - az összehasonlításkor a két ugyanolyan, de eltérő tömb referenciáját
+    //   hasonlítja össze, ami sosem lesz ugyanaz
+
+    // KÖVETKEZMÉNY: üres tömb vizsgálata nehézkes
+
+    if (egyik == []) {  // ha egyik tömb üres lenne, akkor se lenne igaz
+                        // - a [] literál a feltételben létrehoz egy vadonatúj üres tömböt
+                        // - a két tömb referenciája sosem lesz ugyanaz
+
+    }
+
+    //////////////////////////////////////////////////////
+
+    // PRIMITÍV ÉS OBJEKTUM TÍPUSOK
+    // - JavaScriptben a típusokat két nagy csoportr osztjuk
+    //   - primitív (PRIMITIVE): szerkezet nélküli, "egyszerű" típusok
+    //   - objektum (OBJECT, más néven REFERENCIA): szerkezettel rendelkező típusok
+    // - primitív vs referencia egyéb aspektusai:
+    //   - a primitív értékeknek NINCS önálló identitása
+    //     - 42 == 42  igaz
+    //   - a referencia típusoknak VAN önálló identitása
+    //     - [] == []  hamis, két üres tömb sosem lesz ugyanaz az üres tömb
+    //   - a primitív értékek ÉRTÉK SZERINT másolódnak
+    //     - a változókban való másolgatás után különálló életet élnek
+    //   - a referencia típusok REFERENCIA szerint másolódnak
+    //     - a változókban történő másolgatás után UGYANAZ a referencia
+
+    // REFERENCIA SZERINTI MÁSOLÁS
+    
+    let tomb1 = [42, 55, 70];
+    let tomb2 = tomb1;           // tomb1 REFERENCIÁJÁT másoltuk tomb2-be
+                                 // - tomb1 és tomb2 UGYANARRA a tömbre mutatnak
+
+    tomb1 == tomb2;              // 
+
+    tomb1[1]  // 55
+    tomb2[1]  // 55
+
+    tomb1[1] = "hello"
+
+    tomb2[1]  // "hello"    ! itt is módosult, mert "ez" a tömb UGYANAZ a tömb! 
+    
+
+
+
+
+
+
+
+    
+</script>

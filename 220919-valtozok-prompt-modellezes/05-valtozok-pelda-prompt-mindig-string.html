@@ -1,0 +1,26 @@
+<script>
+    // PROBLÉMA: prompt mindig stringet produkál
+    let v = prompt();  // tfh, beírjuk, hogy 42
+
+    alert(v + 1);      // "421"
+                       // - a prompt minden beírt értékből stringet csinál
+                       // - ha számként akarunk dolgozni az értékekkel, akkor
+                       //   nekünk kell számmá alakítani az értéket
+
+
+    // MEGOLDÁS: prompt eredményének számmá alakítása
+
+    let n = prompt();  // tfh, beírjuk, hogy 42
+    n  // "42"
+    let szam = Number(n);  // Number(n): n változó értékének számmá alakítása
+                           // - ha n értéke egy számot leíró string, akkor OK
+                           // - ha nem, akkor NaN
+    szam  // 42
+
+    //////////////////////////////////////////////////////
+
+    let m = prompt();  // tfh, beírjuk, hogy "foo"
+    let nemSzam = Number(m);  // m nem egy számot leíró string, ezért
+                              // Number(m) eredménye NaN lesz
+    alert(nemSzam);   // NaN
+</script>

@@ -1,0 +1,38 @@
+<script>
+    // PROMPT HASZNÁLATA
+    // - két paramétere van, mindkettő opcionális
+
+    let a = prompt();  // megjelenik egy ablak egy beviteli mezővel
+                       // - tfh beírjuk, hogy "fikkfakk"
+    alert(a);          // - megjelenik az alertben, hogy "fikkfakk"
+
+    // megjelenik egy ablak egy beviteli mezővel
+    // - a megadott érték fog megjelenni, mint címke/utasítás
+    let b = prompt("adj meg egy erteket");
+    alert(b);
+    
+    // megjelenik egy ablak egy beviteli mezővel
+    // - az első érték fog megjelenni, mint címke/utasítás
+    // - a második érték fog megjelenni, mint alapértelmezett érték
+    let c = prompt("adj meg egy erteket", "joskagyerek");
+    alert(c);
+
+    // NEM CSAK STRING
+    // - bármely paraméter lehet bármilyen kifejezés
+
+    // TIPIKUS HIBA: nem tároljuk a prompt() eredményét
+
+    prompt("adj meg egy valamit!");  // bármit beírhatunk, az a semmibe vész :C
+    42;                              // - ugyanúgy, mint egy önamgában álló 42 -- kigondolódik, majd elszáll
+
+
+    // KÍSÉRLET: mi történik, ha még egy valamit hozzáírunk?
+    // - az elsp és második paraméterek utáni paramétereket figyelmen kívül hagyja
+    // - ez a viselkedés nyelvfüggő... más nyelvek (pl. C, C++, Java ...)
+    //   ez SZINTAKTIKAI HIBA lenne
+    let d = prompt("adj meg egy erteket", "joskagyerek", "VALAMI");
+    alert(d);
+
+
+
+</script>
